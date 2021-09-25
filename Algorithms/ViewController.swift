@@ -8,15 +8,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let sol = Solution()
-        let arr = [1,3,5]
-        let pos = sol.search(arr, 3)
+        let arr = [1,3,5,23,21,6]
+
+        // let pos = sol.search(arr, 3)
+        
+        let pos = sol.findPeakElement(nums: arr)
         print(pos)
 
         // Do any additional setup after loading the view.
     }
-
-    
-    
 
 }
 
@@ -77,6 +77,24 @@ class Solution {
         
         return  binarySearch(in: arr, low: low, high: mid - 1, key: key)
     }
-
+    
+    
+    func findPeakElement(nums: [Int]) -> Int {
+        return searchForPeak(nums: nums, left: 0, right: nums.count - 1)
+    }
+    
+    private func searchForPeak(nums: [Int], left: Int, right: Int) -> Int {
+        
+        if(left == right) {
+            return left
+        }
+        
+        let mid = (left + right) / 2
+        
+        if(nums[mid] > nums[mid+1]){
+          return  searchForPeak(nums: nums, left: left, right: mid)
+        }
+        return searchForPeak(nums: nums, left: mid+1, right: right)
+    }
 }
 
