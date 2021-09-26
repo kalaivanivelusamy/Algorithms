@@ -8,7 +8,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let sol = Solution()
-        let arr = [1,3,5,23,21,6]
+        let arr = [1,3,5,23,21,98,87,32,10,89,100]
 
         // let pos = sol.search(arr, 3)
         
@@ -80,21 +80,30 @@ class Solution {
     
     
     func findPeakElement(nums: [Int]) -> Int {
-        return searchForPeak(nums: nums, left: 0, right: nums.count - 1)
+        return insertionSort(nums: nums)
     }
     
-    private func searchForPeak(nums: [Int], left: Int, right: Int) -> Int {
+    private func insertionSort(nums: [Int]) -> Int {
         
-        if(left == right) {
-            return left
+        var sortedArr = nums
+        
+        //insertion sort
+        
+        for index in 1..<nums.count
+        {
+            let value = sortedArr[index]
+            var position = index
+
+            while position > 0 && sortedArr[position - 1] > value {
+                sortedArr[position] = sortedArr[position - 1]
+                position -= 1
+            }
+
+            sortedArr[position] = value
         }
         
-        let mid = (left + right) / 2
-        
-        if(nums[mid] > nums[mid+1]){
-          return  searchForPeak(nums: nums, left: left, right: mid)
-        }
-        return searchForPeak(nums: nums, left: mid+1, right: right)
+        return sortedArr[nums.count-1]
     }
+    
 }
 
