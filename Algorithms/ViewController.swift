@@ -14,6 +14,13 @@ class ViewController: UIViewController {
         
         let pos = sol.findPeakElement(nums: arr)
         print(pos)
+        
+        let shuffledItems = sol.shuffleItems(arrItems: arr)
+        print("Shuffle array \(shuffledItems)")
+
+        let stringAlgos = StringAlgorithms()
+//       print("Palindrome or not: \(stringAlgos.palindrome(orignal: "Step on No Pets"))")
+        print("Palindrome or not: \(stringAlgos.palindrome_recurse("Step on No Pets"))")
 
         // Do any additional setup after loading the view.
     }
@@ -22,6 +29,24 @@ class ViewController: UIViewController {
 
 
 class Solution {
+    
+    
+   
+    
+    // MARK: - Fisher-Yates algorithm for shuffle items in array
+    func shuffleItems(arrItems: [Int]) -> [Int]{
+        
+        var items = arrItems
+        
+        var pos = arrItems.count - 1
+        
+        while pos > 0 {
+            let rand = Int.random(in: 0..<pos)
+            items.swapAt(pos, rand)
+            pos -= 1
+        }
+        return items
+    }
     
     func search(_ nums: [Int], _ target: Int) -> Int {
         
