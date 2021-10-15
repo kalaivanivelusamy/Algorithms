@@ -47,16 +47,76 @@ class ViewController: UIViewController {
         
         print("is perfect square \(sol.isPerfectSquare(14))")
         
-        print("is perfect square \(sol.isPerfectSquare(64))")
+        print("next to closest \(sol.nextGreatestLetter(["e","e","e","e","e","e","n","n","n"],"e"))")
         
-        print("is perfect square \(sol.isPerfectSquare(16))")
 
+        print("Power *** \(sol.power(4, 3))")
     }
 
 }
 
+extension Sequence where Iterator.Element: Hashable {
+    func unique() -> [Iterator.Element] {
+        var seen: Set<Iterator.Element> = []
+        return filter { seen.insert($0).inserted }
+    }
+}
+
 
 class Solution {
+    
+    
+    func power(_ x: Double, _ n: Int) -> Double {
+        
+        var temp = 0.0
+        
+        if n == 0{
+            return 1
+        }
+        temp = power(x, n/2)
+
+        if n%2 == 0 {
+            return temp * temp
+        }
+        else{
+            if n > 0 {
+                return temp * temp * x
+            }
+            else{
+                return (temp * temp)/x
+            }
+        }
+        
+        return temp
+        
+    }
+    
+    
+    func nextGreatestLetter(_ letters: [Character], _ target: Character) -> Character {
+        
+        var asciiArr = letters.map{
+            Int($0.asciiValue!)
+        } 
+        
+        asciiArr = asciiArr.unique()
+
+
+        let ch = binarySearch(in: asciiArr, low: 0, high: asciiArr.count - 1, key: Int(target.asciiValue!))
+        
+        if (ch >= 0) {
+            if (ch < asciiArr.count-1) {
+                    return Character(UnicodeScalar(asciiArr[ch+1])!)
+                }
+            else if ch == asciiArr.count - 1{
+                return Character(UnicodeScalar(asciiArr[0])!)
+             }
+            return Character(UnicodeScalar(asciiArr[ch])!)
+
+               } else{
+                   print("Ascii \(asciiArr[0])")
+                   return Character(UnicodeScalar(asciiArr[0])!)
+               } 
+        }
     
     func isPerfectSquare(_ num: Int) -> Bool {
         var left = 1
@@ -172,7 +232,7 @@ class Solution {
     
     func binarySearch(in arr: [Int], low: Int, high: Int, key: Int) -> Int {
         
-        if high < low { return -1 }
+        if high < low { return high }
         
         let mid = ((high + low) / 2)
         
