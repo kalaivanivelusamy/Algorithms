@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C98A6C1E271C8E210044CE2C /* ArrayAlgorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98A6C1D271C8E210044CE2C /* ArrayAlgorithms.swift */; };
 		C9C5F2AF270176C300E0EC30 /* StringAlgorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C5F2AE270176C300E0EC30 /* StringAlgorithms.swift */; };
 		C9DA133C26F0AC8100D29CD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA133B26F0AC8100D29CD9 /* AppDelegate.swift */; };
 		C9DA133E26F0AC8100D29CD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA133D26F0AC8100D29CD9 /* SceneDelegate.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C98A6C1D271C8E210044CE2C /* ArrayAlgorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayAlgorithms.swift; sourceTree = "<group>"; };
 		C9C5F2AE270176C300E0EC30 /* StringAlgorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringAlgorithms.swift; sourceTree = "<group>"; };
 		C9DA133826F0AC8100D29CD9 /* Algorithms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Algorithms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DA133B26F0AC8100D29CD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				C9DA133B26F0AC8100D29CD9 /* AppDelegate.swift */,
 				C9DA133D26F0AC8100D29CD9 /* SceneDelegate.swift */,
 				C9DA133F26F0AC8100D29CD9 /* ViewController.swift */,
+				C98A6C1D271C8E210044CE2C /* ArrayAlgorithms.swift */,
 				C9C5F2AE270176C300E0EC30 /* StringAlgorithms.swift */,
 				C9DA134126F0AC8100D29CD9 /* Main.storyboard */,
 				C9DA134426F0AC8400D29CD9 /* Assets.xcassets */,
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9DA134026F0AC8100D29CD9 /* ViewController.swift in Sources */,
+				C98A6C1E271C8E210044CE2C /* ArrayAlgorithms.swift in Sources */,
 				C9DA133C26F0AC8100D29CD9 /* AppDelegate.swift in Sources */,
 				C9C5F2AF270176C300E0EC30 /* StringAlgorithms.swift in Sources */,
 				C9DA133E26F0AC8100D29CD9 /* SceneDelegate.swift in Sources */,
