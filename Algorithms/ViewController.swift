@@ -41,16 +41,24 @@ class ViewController: UIViewController {
 //        
 //        print("search for a range \(sol.searchRange([5,7,7,8,8,10], 8))")
         
-        print("closest elements: \(sol.printKClosestElements([1,1,1,10,10,10],1,9))")
+//        print("closest elements: \(sol.printKClosestElements([1,1,1,10,10,10],1,9))")
+//        
+//        print("Power \(sol.myPow(2.0, 10))")
+//        
+//        print("is perfect square \(sol.isPerfectSquare(14))")
+//        
+//        print("next to closest \(sol.nextGreatestLetter(["e","e","e","e","e","e","n","n","n"],"e"))")
+//        
+//
+//        print("Power *** \(sol.power(4, 3))")
         
-        print("Power \(sol.myPow(2.0, 10))")
+        //Array Algorithms
         
-        print("is perfect square \(sol.isPerfectSquare(14))")
-        
-        print("next to closest \(sol.nextGreatestLetter(["e","e","e","e","e","e","n","n","n"],"e"))")
-        
-
-        print("Power *** \(sol.power(4, 3))")
+        var arrayAlgos = ArrayAlgorithms()
+        var arry = [1,0,2,3,0,4,5,0]
+        //arrayAlgos.duplicateZeros(&arry)
+        arrayAlgos.anotherDuplicateZeros(&arry)
+        print("Arr \(arry)")
     }
 
 }
