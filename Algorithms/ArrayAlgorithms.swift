@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ArrayAlgorithms
 {
@@ -92,6 +93,31 @@ class ArrayAlgorithms
             current += 1
         }
         return current > max ? current : max
+    }
+    
+    func findNumbers(_ nums: [Int]) -> Int {
+    
+        var evenNums = 0
+        
+        nums.forEach { numbs in
+        
+            var number = numbs
+            number = number / 10
+            var digits = 0
+            while number >= 10 {
+                digits += 1
+                number = number / 10 
+            }
+            digits += 1
+            if 1...9 ~= number {
+                digits += 1
+            }
+            
+            if (digits % 2 == 0) {
+                evenNums += 1
+            }
+        }
+        return evenNums
     }
 
 }

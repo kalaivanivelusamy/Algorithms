@@ -61,6 +61,9 @@ class ViewController: UIViewController {
         arry = [1,1,0,1,1,1]
        let max = arrayAlgos.findMaxConsecutiveOnes(arry)
         print("Consecutive ones \(max)")
+        
+        arry = [555,9012,4821,1771]
+        print(arrayAlgos.findNumbers(arry))
     }
 
 }
