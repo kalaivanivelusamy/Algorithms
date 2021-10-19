@@ -130,5 +130,31 @@ class ArrayAlgorithms
         
         return temp.sorted()
     }
+    
+    func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
+        
+        let temp = nums1
+        let total = m+n
+        for (i,item) in nums1.enumerated().reversed() {
+            if item == 0 && i == nums1.endIndex - 1 {
+                nums1.removeLast()
+            }
+        }
+        nums1.reserveCapacity(m+n)
+        nums1.append(contentsOf: nums2)
+        
+        if nums1.count < total {
+            let arr = temp.suffix(total-m)
+            nums1.append(contentsOf: arr)
+        }
+        
+       nums1 = nums1.sorted()
+        
+        
+    }
+    
+    func binarySearch(_ arr: [Int], target num: Int) {
+        
+    }
 
 }

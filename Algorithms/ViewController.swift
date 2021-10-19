@@ -67,6 +67,16 @@ class ViewController: UIViewController {
         
         arry = [-7,-3,2,3,11]
         print(arrayAlgos.sortedSquares(arry))
+        
+       var nums1 = [-1,-1,0,0,0,0]
+        
+        var m = 4
+        
+        var nums2 = [-1,0]
+        var n = 2
+        
+        arrayAlgos.merge(&nums1, m, nums2, n)
+        print("new \(nums1)")
     }
 
 }
