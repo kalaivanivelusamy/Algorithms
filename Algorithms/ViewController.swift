@@ -56,9 +56,11 @@ class ViewController: UIViewController {
         
         var arrayAlgos = ArrayAlgorithms()
         var arry = [1,0,2,3,0,4,5,0]
-        //arrayAlgos.duplicateZeros(&arry)
         arrayAlgos.anotherDuplicateZeros(&arry)
-        print("Arr \(arry)")
+        print("duplicate zeros \(arry)")
+        arry = [1,1,0,1,1,1]
+       let max = arrayAlgos.findMaxConsecutiveOnes(arry)
+        print("Consecutive ones \(max)")
     }
 
 }
