@@ -119,5 +119,16 @@ class ArrayAlgorithms
         }
         return evenNums
     }
+    
+    func sortedSquares(_ nums: [Int]) -> [Int] {
+        
+        var temp = Array(repeating: 0, count: nums.count)
+        
+        for (index,item) in nums.enumerated() {
+            temp[index] = item * item
+        }
+        
+        return temp.sorted()
+    }
 
 }

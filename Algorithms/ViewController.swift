@@ -64,6 +64,9 @@ class ViewController: UIViewController {
         
         arry = [555,9012,4821,1771]
         print(arrayAlgos.findNumbers(arry))
+        
+        arry = [-7,-3,2,3,11]
+        print(arrayAlgos.sortedSquares(arry))
     }
 
 }
