@@ -77,6 +77,19 @@ class ViewController: UIViewController {
         
         arrayAlgos.merge(&nums1, m, nums2, n)
         print("new \(nums1)")
+        
+        (1...100).forEach(arrayAlgos.calculateFactors)
+        
+        arry = [0,1,2,2,3,0,4,2]
+       let num = arrayAlgos.removeElement(&arry, 2)
+        print(arry,num)
+        
+        arry = [3,2,2,3]
+        let nums = arrayAlgos.anotherRemoveElement(&arry, 3)
+        print(arry,nums)
+
+        
+
     }
 
 }

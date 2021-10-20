@@ -156,5 +156,31 @@ class ArrayAlgorithms
     func binarySearch(_ arr: [Int], target num: Int) {
         
     }
+    
+    func calculateFactors(_ number: Int) {
+        let factors = (1...number).filter {
+           return number % $0 == 0 
+        }
+        let stringFactors = factors.map { String($0) }
+        let joinedFactors = stringFactors.joined(separator: ", ")
+        print("Factors of \(number): \(joinedFactors)")
+    }
+    
+    
+    func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
+    
+        nums.removeAll{ 
+            return $0 == val
+        }
+        return nums.count
+    }
+    
+    func anotherRemoveElement(_ nums: inout [Int], _ val: Int) -> Int {
+        
+        nums = nums.filter{
+            $0 != val
+        }
+        return nums.count
+    }
 
 }
