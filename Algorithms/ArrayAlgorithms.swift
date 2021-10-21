@@ -182,5 +182,16 @@ class ArrayAlgorithms
         }
         return nums.count
     }
+    
+    func removeDuplicates(_ nums: inout [Int]) -> Int {
+    
+        var addedDict = [Int: Bool]()
+
+        nums = nums.filter {
+            addedDict.updateValue(true, forKey: $0) == nil
+        }
+        return nums.count
+
+    }
 
 }

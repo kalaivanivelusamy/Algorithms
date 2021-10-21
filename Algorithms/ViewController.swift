@@ -88,7 +88,8 @@ class ViewController: UIViewController {
         let nums = arrayAlgos.anotherRemoveElement(&arry, 3)
         print(arry,nums)
 
-        
+       var nums_dup = [1,1,2]
+        print(arrayAlgos.removeDuplicates(&nums_dup))
 
     }
 
