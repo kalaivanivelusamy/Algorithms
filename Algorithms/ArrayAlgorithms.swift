@@ -193,5 +193,110 @@ class ArrayAlgorithms
         return nums.count
 
     }
+    
+    func checkIfNandItsDoubleExist(_ arr: [Int]) -> Bool {
+       
+        var found = 0
+
+        for item in arr {
+            if arr.contains((item) * 2) && item != 0 {
+                found += 1
+                break
+            } 
+        }
+        var zeroArr = arr
+        zeroArr.removeAll {
+            return $0 == 0
+        }
+        if found != 0 || (arr.count - zeroArr.count) >= 2  {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func anotherCheckIfNandItsDoubleExist(_ arr: [Int]) -> Bool {
+       
+        for item in arr {
+            if arr.contains((item) * 2) && item != 0 {
+                return true
+            } 
+            else {
+                if item == 0 {
+                    let ct = arr.filter{
+                        $0 == 0
+                    }
+                    if ct.count > 1 {
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+    
+    func replaceElements(_ arr: [Int]) -> [Int] {
+     
+        var max = 0
+        var maxIndex = 0
+        var temp = arr
+        if arr.count <= 1 {
+            return [-1]
+        }
+        for (index,item) in arr.enumerated() {
+           
+            if index >= 1 && index < arr.count-1 {
+                if item > arr[index-1] && item > arr[index+1] {
+                    max = item
+                    for i in (maxIndex...index) {
+                        temp[i] = max
+                    }
+                    maxIndex = index
+                    max = 0
+                } else  if item < arr[index-1] && item > arr[index+1] {
+                    max = arr[index]
+                    temp[maxIndex] = max
+                    print("index \(index)")
+                } 
+            }
+        }
+        temp[temp.endIndex-2] = arr[arr.endIndex-1]
+        temp[temp.endIndex-1] = -1
+        return temp
+    }
+    
+    
+    func replace(from index: Int,to toIndex: Int,_ arr: [Int],element max: Int) -> [Int] {
+        var tempArr = arr
+        for i in (index ..< toIndex) {
+            tempArr[i] = max
+        }
+            return tempArr
+    }
+    
+    func ZipExample() {
+        
+        var oldArray: [Int] = []
+
+        var array = [ 1,2,3,4,5,6] {
+
+            willSet {
+                // Set old array value for compare
+                oldArray = array
+            }
+
+            didSet {
+                var changedIndex1 = zip(array, oldArray)
+                    .map{$0 != $1}.enumerated()
+                let changedIndex = changedIndex1.filter{$1}
+                    .map{$0.0}
+                print("index: \(changedIndex)")
+            }
+        }
+
+        // Now change value of index 4 of array
+
+        array[4] = 10
+    }
 
 }

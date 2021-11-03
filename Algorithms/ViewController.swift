@@ -90,6 +90,17 @@ class ViewController: UIViewController {
 
        var nums_dup = [1,1,2]
         print(arrayAlgos.removeDuplicates(&nums_dup))
+        
+         arry = [0,0]
+        print(arrayAlgos.checkIfNandItsDoubleExist(arry))
+        
+//        arry = [56903,18666,60499,57517,26961]
+//        print(arrayAlgos.replaceElements(arry))
+        
+        var arryl = [57010,40840,69871,14425,70605]
+        print(arrayAlgos.replaceElements(arryl))
+        
+        arrayAlgos.ZipExample()
 
     }
 
