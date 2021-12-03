@@ -101,6 +101,8 @@ class ViewController: UIViewController {
         print(arrayAlgos.replaceElements(arryl))
         
         arrayAlgos.ZipExample()
+        print("*****names*****")
+        print("caps \(stringAlgos.getNamesinCaps(name: "!@deyg@"))")
 
     }
 

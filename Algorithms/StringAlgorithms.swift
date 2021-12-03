@@ -34,4 +34,11 @@ class StringAlgorithms {
         }
         
     }
+    
+    func getNamesinCaps(name: String) -> String {
+        return name.filter{
+            $0.isLetter
+        }
+        .uppercased()
+    }
 }
